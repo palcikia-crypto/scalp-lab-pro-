@@ -70,7 +70,7 @@ fillna(0.0)
 
 
 def vol_drift(df, z, h):
-    # паттерн vol_z>3: после всплеска объма дрейф вверх до 60 баров
+    # паттерн vol_z>3: после всплеска объёма дрейф вверх до 60 баров
     v = df["volume"]
     m = v.rolling(200).mean()
     s = v.rolling(200).std()
@@ -112,7 +112,7 @@ def bb_maker(df, n, k):
     return bollinger_reversion(df, n, k)
 
 
-# ===== комбинированные: сигнал + подтверждение объмом (vol_z, FDR-выживший) =====
+# ===== комбинированные: сигнал + подтверждение объёмом (vol_z, FDR-выживший) =====
 
 def _vol_z(df):
     v = df["volume"]
@@ -122,7 +122,7 @@ def _vol_z(df):
 
 
 def streak_vol(df, n_streak, vz, h):
-    # серия одноцветных свечей + всплеск объма -> реверс (объединение 2 FDR-паттернов)
+    # серия одноцветных свечей + всплеск объёма -> реверс (объединение 2 FDR-паттернов)
     up = (df["close"] - df["open"]) > 0
     dn = ~up
     up_run = up.groupby((~up).cumsum()).cumsum()
@@ -136,7 +136,7 @@ def streak_vol(df, n_streak, vz, h):
 
 
 def bb_vol(df, n, k, vz, h):
-    # выход за границу Bollinger, подтвержднный объмом: меньше ложных входов
+    # выход за границу Bollinger, подтверждённый объёмом: меньше ложных входов
     m = df["close"].rolling(n).mean()
     sd = df["close"].rolling(n).std()
     z = _vol_z(df)
@@ -147,7 +147,7 @@ def bb_vol(df, n, k, vz, h):
 
 
 def wick_vol(df, w, vz, h):
-    # большая тень + всплеск объма -> откат
+    # большая тень + всплеск объёма -> откат
     rng = (df["high"] - df["low"]).replace(0.0, np.nan)
     body_hi = df[["open", "close"]].max(axis=1)
     body_lo = df[["open", "close"]].min(axis=1)
@@ -161,7 +161,7 @@ def wick_vol(df, w, vz, h):
 
 
 def spike_revert(df, pct, vz, h):
-    # памп/дамп: большое движение свечи + всплеск объма -> вход ПРОТИВ движения
+    # памп/дамп: большое движение свечи + всплеск объёма -> вход ПРОТИВ движения
     # опирается на FDR-закономерность: vol_z-всплески откатываются
     r = df["close"] / df["open"] - 1.0
     z = _vol_z(df)
@@ -172,7 +172,7 @@ def spike_revert(df, pct, vz, h):
 
 
 def spike_follow(df, pct, vz, h):
-    # инерция пампа/дампа: большое движение + объм -> вход ПО движению
+    # инерция пампа/дампа: большое движение + объём -> вход ПО движению
     r = df["close"] / df["open"] - 1.0
     z = _vol_z(df)
     sig = pd.Series(np.nan, index=df.index)
@@ -182,7 +182,7 @@ def spike_follow(df, pct, vz, h):
 
 
 def crash_revert(df, k, thr, vz, h):
-    # каскадный памп/дамп: суммарное движение за k баров + объм -> реверс
+    # каскадный памп/дамп: суммарное движение за k баров + объём -> реверс
     r = df["close"] / df["open"] - 1.0
     cum = r.rolling(k).sum()
     z = _vol_z(df)
@@ -206,7 +206,7 @@ def spike_bb(df, pct, k, vz, h):
 
 
 def vol_burst_revert(df, vz, h):
-    # главный FDR-паттерн (vol_z>5, t=3.0): взрыв объма -> откат против свечи
+    # главный FDR-паттерн (vol_z>5, t=3.0): взрыв объёма -> откат против свечи
     z = _vol_z(df)
     up = (df["close"] - df["open"]) > 0
     sig = pd.Series(np.nan, index=df.index)
@@ -314,7 +314,7 @@ def flow_fade(df, k, h):
 
 
 def squeeze_pop(df, n, m, vz, h):
-    # сжатие диапазона -> прорыв с объмом -> короткий моментум по движению
+    # сжатие диапазона -> прорыв с объёмом -> короткий моментум по движению
     rng = (df["high"] - df["low"]).rolling(n).mean()
     avg = rng.rolling(200).mean().replace(0.0, np.nan)
     sq = (rng < m * avg).fillna(False)
@@ -366,7 +366,7 @@ def streak_bb(df, n_streak, k, h):
 
 
 def vol_pop(df, vz, h):
-    # объмный импульс после затишья -> короткий моментум по направлению свечи
+    # объёмный импульс после затишья -> короткий моментум по направлению свечи
     z = _vol_z(df)
     calm_prev = z.shift(1) < 1.0
     up = (df["close"] - df["open"]) > 0
@@ -401,15 +401,15 @@ STRATEGIES = {
     "wick_reversion": (wick_reversion, grid(w=[0.4, 0.5], h=[15, 30, 60])),
     "donchian_trend": (donchian_trend, grid(n=[96, 192, 384])),
     "bb_maker": (bb_maker, grid(n=[50, 100, 200], k=[2.0, 2.5])),
-    # комбинированные: сигнал + объмное подтверждение
+    # комбинированные: сигнал + объёмное подтверждение
     "streak_vol": (streak_vol, grid(n_streak=[3, 4], vz=[2.0, 3.0], h=[15, 30, 60])),
     "bb_vol": (bb_vol, grid(n=[50, 100], k=[2.0, 2.5], vz=[2.0, 3.0], h=[15, 30, 60])),
     "wick_vol": (wick_vol, grid(w=[0.4, 0.5], vz=[2.0, 3.0], h=[15, 30, 60])),
-    # памп/дамп: резкий ход с объмом
+    # памп/дамп: резкий ход с объёмом
     "spike_revert": (spike_revert, grid(pct=[0.01, 0.02, 0.03, 0.05], vz=[2.0, 3.0], h=[30, 60])),
     "spike_follow": (spike_follow, grid(pct=[0.008, 0.015, 0.03], vz=[2.0, 3.0], h=[15, 30, 60])),
     # памп/дамп: волна 2 — каскады, с
-пайк+канал, взрыв объма
+пайк+канал, взрыв объёма
     "crash_revert": (crash_revert, grid(k=[3, 5], thr=[0.03, 0.05, 0.08], vz=[2.0, 3.0], h=[30, 60])),
     "spike_bb": (spike_bb, grid(pct=[0.01, 0.02], k=[2.0, 2.5], vz=[2.0, 3.0], h=[30, 60])),
     "vol_burst_revert": (vol_burst_revert, grid(vz=[4.0, 5.0, 6.0], h=[60, 120])),
