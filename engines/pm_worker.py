@@ -56,7 +56,6 @@ def fnum(x):
 
 # ---------- классический движок (tag 21) ----------
 def scan():
-
     ms = []
     for off in range(0, 200, 100):
         if time.time() > T0 + BUDGET_S * 0.35: break
@@ -105,8 +104,7 @@ def zscore(pts):
     return (tail[-1] - m) / sd
 
 def days_left(m):
-    if not m["end_epoch"]:
- return 999
+    if not m["end_epoch"]: return 999
     return max(0.0, (m["end_epoch"] - time.time()) / 86400.0)
 
 def make_signals(ms):
@@ -136,10 +134,9 @@ def make_signals(ms):
         if z < -2.0 and 0.15 <= p <= 0.85: add("mr", "Yes", p, -z * 0.02, "цена ниже нормы, z=%.1f" % z)
         if z > 2.0 and 0.15 <= q <= 0.85: add("mr", "No", q, z * 0.02, "цена выше нормы, z=%.1f" % z)
         if m["v1w"] > 0 and m["v24"] > 0 and m["v24"] > (m["v1w"] / 7.0) * 3.0:
-            add("vols", "-", 0, 0, "объм 24ч %.0f против среднего %.0f" % (m["v24"], m["v1w"] / 7.0), False)
+            add("vols", "-", 0, 0, "объём 24ч %.0f против среднего %.0f" % (m["v24"], m["v1w"] / 7.0), False)
         if 0.78 <= p <= 0.95 and dl <= 30 and m["liq"] >= 10000: add("fav", "Yes", p, (1 - p) * 0.5, "фаворит %.0f%% до конца %.0f дн" % (p * 100, dl))
-        if 0.78 <= q <= 0.95 and dl <= 30 and m["liq"] >= 10000
-: add("fav", "No", q, (1 - q) * 0.5, "фаворит (No) %.0f%% до конца %.0f дн" % (q * 100, dl))
+        if 0.78 <= q <= 0.95 and dl <= 30 and m["liq"] >= 10000: add("fav", "No", q, (1 - q) * 0.5, "фаворит (No) %.0f%% до конца %.0f дн" % (q * 100, dl))
     best = {}
     for s in sigs:
         if s["slug"] not in best or s["edge"] > best[s["slug"]]["edge"]:
@@ -191,8 +188,7 @@ def sht_scan():
             evs = fetch(GAMMA + "/events?series_slug=" + series_slug + "&closed=false&limit=60&order=endDate&ascending=true", 12)
         except Exception:
             continue
-        if not isins
-tance(evs, list): continue
+        if not isinstance(evs, list): continue
         for ev in evs:
             try:
                 slug = ev.get("slug", "")
@@ -235,8 +231,7 @@ tance(evs, list): continue
     return windows
 
 def sht_trade(st, windows):
-    eq = st["cash"] + sum(p["shares"] * p.get("last", p["entry"]) for p in
- st["positions"].values())
+    eq = st["cash"] + sum(p["shares"] * p.get("last", p["entry"]) for p in st["positions"].values())
     n_sht = sum(1 for p in st["positions"].values() if p.get("kind") == "sht")
     held = set(p["slug"] for p in st["positions"].values())
     for w in windows:
@@ -262,10 +257,10 @@ def sht_trade(st, windows):
         n_sht += 1
 
 def sht_trade_streaks(st, windows):
-    """Авто-стратегия моментума: включается ТОЛЬКО когда лаборатория подтвердила стрик-эдж ()."""
+    """Авто-стратегия моментума: включается ТОЛЬКО когда лаборатория подтвердила стрик-эдж (✅)."""
     strat = jload("results/strategies.json", {})
     sv = strat.get("streak_v1") or {}
-    if not str(sv.get("status", "")).startswith(""): return
+    if not str(sv.get("status", "")).startswith("✅"): return
     probs = sv.get("probs") or {}
     pu, pd = probs.get("after_up"), probs.get("after_down")
     if pu is None or pd is None: return
@@ -274,8 +269,7 @@ def sht_trade_streaks(st, windows):
     n_sht = sum(1 for p in st["positions"].values() if p.get("kind") == "sht")
     held = set(p["slug"] for p in st["positions"].values())
     for w in windows:
- 
-       if n_sht >= MAX_SHT_POS or st["cash"] < 15: break
+        if n_sht >= MAX_SHT_POS or st["cash"] < 15: break
         if w["slug"] in held: continue
         prev_slug = re.sub(r"\d{9,}$", str(w["start"] - w["win_s"]), w["slug"])
         pv = (lab.get(prev_slug) or {}).get("outcome")
@@ -307,7 +301,7 @@ def settle_sht(st):
         final = None
         if time.time() > pos["end_ts"] + 7200:
             final = 0.5
-            reason = "нет данных расчта"
+            reason = "нет данных расчёта"
         else:
             pr = None
             try:
@@ -317,8 +311,7 @@ def settle_sht(st):
             except Exception:
                 pr = None
             if not pr or len(pr) != 2 or max(pr) < 0.99:
-                # за
-крытые окна удаляются из /markets - берм исход из /events
+                # закрытые окна удаляются из /markets - берём исход из /events
                 try:
                     ev = fetch(GAMMA + "/events?slug=" + pos["slug"], 10)
                     if isinstance(ev, list) and ev:
@@ -330,7 +323,7 @@ def settle_sht(st):
             if pr and len(pr) == 2 and max(pr) >= 0.99:
                 idx = 0 if pos["outcome"] == "Up" else 1
                 final = pr[idx]
-                reason = "расчт рынка"
+                reason = "расчёт рынка"
         if final is None: continue
         st["positions"].pop(key)
         payout = pos["shares"] * final
@@ -358,8 +351,7 @@ def lab_log(windows):
     lab = jload(ST["lab"], {})
     if not isinstance(lab, dict): lab = {}
     t_now = int(time.time())
-    fo
-r w in windows:
+    for w in windows:
         key = w["slug"]
         e = lab.get(key)
         if e is None:
@@ -405,8 +397,7 @@ def main():
         elif chg <= -0.10: close_pos(st, key, "стоп-лосс -10%")
         elif age > 14.0: close_pos(st, key, "макс. срок 14 дней")
     sigs = make_signals(ms)
-    eq = st["cash"] + sum(p["sha
-res"] * p.get("last", p["entry"]) for p in st["positions"].values())
+    eq = st["cash"] + sum(p["shares"] * p.get("last", p["entry"]) for p in st["positions"].values())
     held = set(p["slug"] for p in st["positions"].values())
     keys = st.setdefault("done_keys", {})
     if len(keys) > 300: keys.clear()
@@ -442,8 +433,7 @@ res"] * p.get("last", p["entry"]) for p in st["positions"].values())
                    "winrate": round(100.0 * wins / len(closed), 1) if closed else 0.0,
                    "pnl_pct": round((eq / CASH0 - 1) * 100, 2), "updated": now(),
                    "runs": st["runs"],
-                   "sht_open": s
-um(1 for p in st["positions"].values() if p.get("kind") == "sht"),
+                   "sht_open": sum(1 for p in st["positions"].values() if p.get("kind") == "sht"),
                    "sht_trades": int(st.get("stats", {}).get("sht_trades", 0)) if isinstance(st.get("stats"), dict) else 0,
                    "sht_pnl": (st.get("stats", {}) or {}).get("sht_pnl", 0) if isinstance(st.get("stats"), dict) else 0}
     jsave(ST["state"], st)

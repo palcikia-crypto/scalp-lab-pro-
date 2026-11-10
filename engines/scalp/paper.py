@@ -23,7 +23,7 @@ except Exception:
 STATE_PATH = "results/paper.json"
 CAPITAL_START = 1000.0
 MAX_TRACK = 8
-# Бог-уровень отбора: не жсткий бан по стабильности, а композитный скор.
+# Бог-уровень отбора: не жёсткий бан по стабильности, а композитный скор.
 # Стабильность параметров штрафует скор, но не отсекает стратегию с
 # доказанным эджем; зато шум (t <= 1.5) в портфель не попадает никогда.
 MIN_T = 1.5      # t-статистика OOS: ниже - эдж статистически не значим
@@ -61,8 +61,7 @@ def top_strategies():
             r = json.load(open(f))
         except Exception:
             continue
-        if not (isinst
-ance(r, dict) and "oos" in r):
+        if not (isinstance(r, dict) and "oos" in r):
             continue
         k = (r.get("strategy"), r.get("symbol"), r.get("tf"))
         try:
@@ -115,8 +114,7 @@ ance(r, dict) and "oos" in r):
             stats["no_params"] += 1
             continue
         if not params:
-          
-  stats["no_params"] += 1
+            stats["no_params"] += 1
             continue
         fee_mode = "maker" if r["strategy"] in strategies.MAKER_SET else "taker"
         out.append({"key": "-".join(key), "strategy": r["strategy"],
@@ -167,8 +165,7 @@ def main():
         t = st["positions"][key]
         try:
             df = get_klines(t["symbol"], t["tf"])
-            close_pos(st, key, float(df["close"].i
-loc[-1]),
+            close_pos(st, key, float(df["close"].iloc[-1]),
                       str(df["dt"].iloc[-1]), "rotated out")
         except Exception:
             pass
@@ -216,8 +213,7 @@ loc[-1]),
                     if pos is not None:
                         close_pos(st, t["key"], px, ts, "signal flip")
                     st["positions"][t["key"]] = {
-                        "strategy": t["stra
-tegy"], "symbol": t["symbol"],
+                        "strategy": t["strategy"], "symbol": t["symbol"],
                         "tf": t["tf"], "signal": s, "entry": px,
                         "opened": ts, "fee_mode": t["fee_mode"],
                         "oos_sharpe": t["oos_sharpe"], "last_ts": ts,
