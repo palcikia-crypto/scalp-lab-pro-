@@ -44,7 +44,7 @@ jobs:
           exit 0
       - name: Unified reporter
         run: python reporter.py || true
-      - name: Commit (устойчиво к гонкам: пауза + 6 попыток rebase)
+      - name: Commit (race-safe, rebase retries)
         if: always()
         run: |
           sleep 20
