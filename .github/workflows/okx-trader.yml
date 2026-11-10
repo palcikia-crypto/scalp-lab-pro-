@@ -1,1 +1,64 @@
-Too many requests to this site right now. Wait before retrying, or open a different source.
+name: okx-trader
+on:
+  schedule:
+    - cron: "7,17,27,37,47,57 * * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ["engines/okx/**"]
+concurrency:
+  group: okx-trader
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: engines/okx/requirements.txt
+      - name: Install deps (лог в файл)
+        working-directory: engines/okx
+        run: |
+          pip install -r requirements.txt 2>&1 | tee pip_log.txt | tail -3
+          python -c "import pandas, requests; print('imports ok')" 2>&1 | tee -a pip_log.txt
+      - name: OKX trader (live при Secrets, иначе paper на живых свечах OKX)
+        working-directory: engines/okx
+        env:
+          OKX_API_KEY: ${{ secrets.OKX_API_KEY }}
+          OKX_API_SECRET: ${{ secrets.OKX_API_SECRET }}
+          OKX_API_PASSPHRASE: ${{ secrets.OKX_API_PASSPHRASE }}
+          OKX_DEMO: ${{ secrets.OKX_DEMO }}
+          OKX_ORDER_USDT: ${{ vars.OKX_ORDER_USDT }}
+          OKX_LEVERAGE: ${{ vars.OKX_LEVERAGE }}
+          OKX_MAX_OPEN: ${{ vars.OKX_MAX_OPEN }}
+        run: |
+          rm -f trader_log.txt
+          timeout 300 python trader.py > trader_log.txt 2>&1 || echo "TRADER FAILED (exit $?)" >> trader_log.txt
+          tail -40 trader_log.txt
+          exit 0
+      - name: Unified reporter
+        run: python reporter.py || true
+      - name: Commit (устойчиво к гонкам: пауза + 6 попыток rebase)
+        if: always()
+        run: |
+          sleep 20
+          git config user.name "omni-bot"
+          git config user.email "omni-bot@users.noreply.github.com"
+          git add -A engines/okx || true
+          git add results/universe.json || true
+          if ! git diff --cached --quiet; then
+            git commit -m "auto: okx trader [skip ci]" || true
+            for i in 1 2 3 4 5 6; do
+              git fetch origin || true
+              git rebase origin/main > /dev/null 2>&1 || { git rebase --abort > /dev/null 2>&1 || true; sleep 10; continue; }
+              git push origin HEAD:main && exit 0
+              sleep 10
+            done
+          fi
+          exit 0
