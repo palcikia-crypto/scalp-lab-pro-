@@ -1,7 +1,7 @@
 """OKX V5 REST-клиент: публичные данные + подписанные приватные запросы.
 
 Аутентификация: HMAC-SHA256 (OK-ACCESS-KEY/SIGN/TIMESTAMP/PASSPHRASE).
-OKX_DEMO=1  заголовок x-simulated-trading: 1 (демо-счт OKX).
+OKX_DEMO=1 → заголовок x-simulated-trading: 1 (демо-счёт OKX).
 Без ключей работают только публичные эндпоинты (свечи, инструменты).
 """
 import base64

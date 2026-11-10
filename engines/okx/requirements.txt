@@ -1,1 +1,2 @@
-Too many requests to this site right now. Wait before retrying, or open a different source.
+requests>=2.31
+pandas>=2.0
