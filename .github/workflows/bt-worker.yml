@@ -47,7 +47,8 @@ jobs:
           git config user.name "omni-bot"
           git config user.email "omni-bot@users.noreply.github.com"
           git add results/ || true
-          git add engines/scalp/results engines/scalp/reports || true
+          git add engines/scalp/results || true
+          git add engines/scalp/reports || true
           if ! git diff --cached --quiet; then
             git commit -m "auto: backtest wave [skip ci]" || true
             for i in 1 2 3; do
@@ -56,8 +57,7 @@ jobs:
               git push origin HEAD:main && exit 0
             done
           fi
-    
-      exit 0
+          exit 0
       - name: Self-trigger next run if work remains
         if: always()
         env:
