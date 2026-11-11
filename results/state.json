@@ -1,6 +1,39 @@
 {
- "cash": 1000.0,
- "positions": {},
+ "cash": 900.0,
+ "positions": {
+  "btc-updown-15m-1794386700": {
+   "kind": "sht",
+   "slug": "btc-updown-15m-1794386700",
+   "question": "Bitcoin Up or Down - November 11, 3:45AM-4:00AM ET",
+   "series": "btc-up-or-down-15m",
+   "outcome": "Up",
+   "strategy": "sht15",
+   "entry": 0.12,
+   "last": 0.12,
+   "shares": 416.67,
+   "usd": 50.0,
+   "opened": "2026-11-11T08:55:32Z",
+   "epoch": 1794387332.1202672,
+   "end_ts": 1794387600,
+   "fair_up": 0.24
+  },
+  "eth-updown-15m-1794386700": {
+   "kind": "sht",
+   "slug": "eth-updown-15m-1794386700",
+   "question": "Ethereum Up or Down - November 11, 3:45AM-4:00AM ET",
+   "series": "eth-up-or-down-15m",
+   "outcome": "Up",
+   "strategy": "sht15",
+   "entry": 0.31,
+   "last": 0.31,
+   "shares": 161.29,
+   "usd": 50.0,
+   "opened": "2026-11-11T08:55:32Z",
+   "epoch": 1794387332.1202912,
+   "end_ts": 1794387600,
+   "fair_up": 0.426
+  }
+ },
  "closed": [],
  "curve": [
   [
@@ -14,22 +47,26 @@
   [
    "2026-11-11T02:00:14Z",
    1000.0
+  ],
+  [
+   "2026-11-11T08:55:32Z",
+   1000.0
   ]
  ],
- "runs": 2,
+ "runs": 3,
  "done_keys": {},
  "cal": [],
  "stats": {
   "equity": 1000.0,
-  "cash": 1000.0,
-  "open": 0,
+  "cash": 900.0,
+  "open": 2,
   "trades": 0,
   "wins": 0,
   "winrate": 0.0,
   "pnl_pct": 0.0,
-  "updated": "2026-11-11T02:00:14Z",
-  "runs": 2,
-  "sht_open": 0,
+  "updated": "2026-11-11T08:55:32Z",
+  "runs": 3,
+  "sht_open": 2,
   "sht_trades": 0,
   "sht_pnl": 0
  }
