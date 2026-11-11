@@ -41,8 +41,8 @@
    "err": null
   },
   "ETH-USDT-SWAP": {
-   "sig": -1,
-   "price": 2044.46,
+   "sig": 0,
+   "price": null,
    "err": null
   },
   "SOL-USDT-SWAP": {
@@ -52,5 +52,5 @@
   }
  },
  "errors": [],
- "updated": "2026-11-11T01:03:34Z"
+ "updated": "2026-11-11T07:42:21Z"
 }
