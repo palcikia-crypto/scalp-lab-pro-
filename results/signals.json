@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T22:24:19Z",
+ "updated": "2026-11-11T02:00:14Z",
  "scanned": 200,
  "signals": [
   {
@@ -10,11 +10,26 @@
    "price": 0,
    "edge": 0,
    "note": "объём 24ч 42857 против среднего 10960",
-   "liq": 436231,
+   "liq": 450625,
    "v24": 42857,
    "z": 0.0,
    "end": "2027-01-01",
-   "days_left": 51.1,
+   "days_left": 50.9,
+   "tradeable": false
+  },
+  {
+   "strategy": "vols",
+   "slug": "will-bitcoin-reach-170000-by-december-31-2026-335-688-943",
+   "question": "Will Bitcoin reach $170,000 by December 31, 2026?",
+   "outcome": "-",
+   "price": 0,
+   "edge": 0,
+   "note": "объём 24ч 3284 против среднего 819",
+   "liq": 148278,
+   "v24": 3284,
+   "z": 0.0,
+   "end": "2027-01-01",
+   "days_left": 50.9,
    "tradeable": false
   }
  ]
