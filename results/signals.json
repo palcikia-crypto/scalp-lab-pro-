@@ -1,17 +1,17 @@
 {
- "updated": "2026-11-11T16:44:03Z",
+ "updated": "2026-11-11T23:04:43Z",
  "scanned": 200,
  "signals": [
   {
    "strategy": "vols",
-   "slug": "bitcoin-above-84k-on-november-11-2026",
-   "question": "Will the price of Bitcoin be above $84,000 on November 11?",
+   "slug": "bitcoin-up-or-down-november-11-2026-5pm-et",
+   "question": "Bitcoin Up or Down - November 11, 5PM ET",
    "outcome": "-",
    "price": 0,
    "edge": 0,
-   "note": "объём 24ч 10495 против среднего 3459",
-   "liq": 132090,
-   "v24": 10495,
+   "note": "объём 24ч 12759 против среднего 1823",
+   "liq": 168848,
+   "v24": 12759,
    "z": 0.0,
    "end": "2026-11-11",
    "days_left": 0.0,
