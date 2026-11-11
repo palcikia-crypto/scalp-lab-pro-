@@ -36,21 +36,21 @@
  "params_source": "default",
  "signals": {
   "BTC-USDT-SWAP": {
-   "sig": 1,
-   "price": 73749.3,
+   "sig": 0,
+   "price": null,
    "err": null
   },
   "ETH-USDT-SWAP": {
-   "sig": 1,
-   "price": 2057.71,
+   "sig": -1,
+   "price": 2044.46,
    "err": null
   },
   "SOL-USDT-SWAP": {
-   "sig": 1,
-   "price": 83.34,
+   "sig": 0,
+   "price": null,
    "err": null
   }
  },
  "errors": [],
- "updated": "2026-11-10T20:59:11Z"
+ "updated": "2026-11-11T01:03:34Z"
 }
