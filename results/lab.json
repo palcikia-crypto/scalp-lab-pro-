@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-11T17:52:00Z",
+ "updated": "2026-11-12T00:33:46Z",
  "status": "ready",
  "status_note": "База достаточна. Подтверждённых OOS закономерностей: 0 из 8 гипотез.",
  "settled_this_run": 30,
- "backfilled": 145,
- "base_up_rate": 0.478,
+ "backfilled": 91,
+ "base_up_rate": 0.47,
  "data": {
-  "windows": 2231,
-  "settled": 1521,
-  "snaps": 1025,
-  "span_h": 72.1,
-  "hist": 1428
+  "windows": 2511,
+  "settled": 1642,
+  "snaps": 1282,
+  "span_h": 78.4,
+  "hist": 1519
  },
  "model": {
   "n": 5,
@@ -86,53 +86,59 @@
   {
    "tag": "sht15",
    "k": 1,
-   "n_up": 216,
-   "p_after_up": 0.681,
-   "n_dn": 230,
-   "p_after_dn": 0.3
+   "n_up": 217,
+   "p_after_up": 0.677,
+   "n_dn": 234,
+   "p_after_dn": 0.299
   },
   {
    "tag": "sht15",
    "k": 2,
    "n_up": 147,
    "p_after_up": 0.599,
-   "n_dn": 160,
-   "p_after_dn": 0.375
+   "n_dn": 163,
+   "p_after_dn": 0.374
   },
   {
    "tag": "sht15",
    "k": 3,
    "n_up": 88,
    "p_after_up": 0.636,
-   "n_dn": 99,
-   "p_after_dn": 0.333
+   "n_dn": 101,
+   "p_after_dn": 0.337
   },
   {
    "tag": "sht5",
    "k": 1,
-   "n_up": 511,
-   "p_after_up": 0.732,
-   "n_dn": 562,
-   "p_after_dn": 0.244
+   "n_up": 554,
+   "p_after_up": 0.731,
+   "n_dn": 635,
+   "p_after_dn": 0.236
   },
   {
    "tag": "sht5",
    "k": 2,
-   "n_up": 374,
-   "p_after_up": 0.735,
-   "n_dn": 424,
-   "p_after_dn": 0.255
+   "n_up": 405,
+   "p_after_up": 0.736,
+   "n_dn": 485,
+   "p_after_dn": 0.245
   },
   {
    "tag": "sht5",
    "k": 3,
-   "n_up": 275,
-   "p_after_up": 0.673,
-   "n_dn": 315,
-   "p_after_dn": 0.302
+   "n_up": 298,
+   "p_after_up": 0.674,
+   "n_dn": 366,
+   "p_after_dn": 0.29
   }
  ],
  "hours": [
+  {
+   "hour": 0,
+   "n": 60,
+   "up_rate": 0.4,
+   "flag": false
+  },
   {
    "hour": 2,
    "n": 52,
@@ -149,7 +155,7 @@
    "hour": 4,
    "n": 52,
    "up_rate": 0.577,
-   "flag": false
+   "flag": true
   },
   {
    "hour": 5,
@@ -243,20 +249,20 @@
   },
   {
    "hour": 20,
-   "n": 60,
-   "up_rate": 0.667,
+   "n": 79,
+   "up_rate": 0.595,
    "flag": true
   },
   {
    "hour": 21,
-   "n": 60,
-   "up_rate": 0.45,
+   "n": 96,
+   "up_rate": 0.417,
    "flag": false
   },
   {
    "hour": 22,
-   "n": 60,
-   "up_rate": 0.433,
+   "n": 96,
+   "up_rate": 0.406,
    "flag": false
   },
   {
@@ -268,12 +274,12 @@
  ],
  "streak_edge": {
   "probs": {
-   "after_up": 0.468,
-   "after_down": 0.486
+   "after_up": 0.481,
+   "after_down": 0.505
   },
   "n_est": {
-   "up": 532,
-   "down": 527
+   "up": 588,
+   "down": 556
   },
   "oos": {
    "n": 0,
@@ -345,19 +351,19 @@
   },
   {
    "name": "Время суток не влияет на исход Up/Down",
-   "note": "уклонения >= 10пп от базы при n >= 50 в часе: 2:00 UTC, 6:00 UTC, 10:00 UTC",
-   "is_n": 22,
-   "is_v": "уклонений: 6",
-   "oos_n": 22,
-   "oos_v": "уклонений: 6",
+   "note": "уклонения >= 10пп от базы при n >= 50 в часе: 2:00 UTC, 4:00 UTC, 6:00 UTC",
+   "is_n": 23,
+   "is_v": "уклонений: 7",
+   "oos_n": 23,
+   "oos_v": "уклонений: 7",
    "ok": false,
    "status": "✨ паттерн: время суток влияет"
   },
   {
    "name": "Стрик-эдж: рынок недооценивает моментум",
-   "note": "вероятности из старых 70% данных, сделки только на новых 30%; P(Up|после Up)=0.468, P(Up|после Down)=0.486",
-   "is_n": 1059,
-   "is_v": "P(up|up)=0.468",
+   "note": "вероятности из старых 70% данных, сделки только на новых 30%; P(Up|после Up)=0.481, P(Up|после Down)=0.505",
+   "is_n": 1144,
+   "is_v": "P(up|up)=0.481",
    "oos_n": 0,
    "oos_v": null,
    "ok": false,
