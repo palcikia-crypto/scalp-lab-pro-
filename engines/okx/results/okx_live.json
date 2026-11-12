@@ -46,11 +46,11 @@
    "err": null
   },
   "SOL-USDT-SWAP": {
-   "sig": 0,
-   "price": null,
+   "sig": -1,
+   "price": 82.81,
    "err": null
   }
  },
  "errors": [],
- "updated": "2026-11-12T03:10:48Z"
+ "updated": "2026-11-12T11:17:11Z"
 }
