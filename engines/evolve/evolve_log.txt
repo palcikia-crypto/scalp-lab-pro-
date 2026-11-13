@@ -1,0 +1,1 @@
+evolve: best={"ema_fast": 5, "ema_slow": 13, "sl_atr": 2.0, "tp_atr": 2.0, "is_ret": 0.23, "oos_ret": 0.84, "trades": 25, "updated": "2026-11-13T16:14:58Z"} candidates=1 golden=3 err=None
