@@ -1,6 +1,21 @@
 {
  "history": [
   {
+   "ts": "2026-11-13T22:34:16Z",
+   "best": {
+    "ema_fast": 5,
+    "ema_slow": 13,
+    "sl_atr": 2.0,
+    "tp_atr": 2.0,
+    "is_ret": 5.14,
+    "oos_ret": 6.73,
+    "trades": 20,
+    "updated": "2026-11-13T22:34:16Z"
+   },
+   "golden_n": 3,
+   "err": null
+  },
+  {
    "ts": "2026-11-13T16:14:58Z",
    "best": {
     "ema_fast": 5,
@@ -16,27 +31,36 @@
    "err": null
   }
  ],
- "updated": "2026-11-13T16:14:58Z",
+ "updated": "2026-11-13T22:34:16Z",
  "best_okx": {
   "ema_fast": 5,
   "ema_slow": 13,
   "sl_atr": 2.0,
   "tp_atr": 2.0,
-  "is_ret": 0.23,
-  "oos_ret": 0.84,
-  "trades": 25,
-  "updated": "2026-11-13T16:14:58Z"
+  "is_ret": 5.14,
+  "oos_ret": 6.73,
+  "trades": 20,
+  "updated": "2026-11-13T22:34:16Z"
  },
  "candidates": [
   {
    "ema_fast": 5,
    "ema_slow": 13,
+   "sl_atr": 1.5,
+   "tp_atr": 2.0,
+   "is_ret": 2.25,
+   "oos_ret": 3.82,
+   "trades": 23
+  },
+  {
+   "ema_fast": 5,
+   "ema_slow": 13,
    "sl_atr": 2.0,
    "tp_atr": 2.0,
-   "is_ret": 0.23,
-   "oos_ret": 0.84,
-   "trades": 25,
-   "updated": "2026-11-13T16:14:58Z"
+   "is_ret": 5.14,
+   "oos_ret": 6.73,
+   "trades": 20,
+   "updated": "2026-11-13T22:34:16Z"
   }
  ],
  "golden": [
