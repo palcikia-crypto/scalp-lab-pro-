@@ -1,16 +1,8 @@
 {
  "paper": {
-  "equity": 1000.0,
+  "equity": 999.9751789411657,
   "start": 1000.0,
   "positions": {
-   "BTC-USDT-SWAP": {
-    "side": 1,
-    "entry": 73749.3,
-    "sz": 6.779725366884838e-05,
-    "tp": 74359.47857142857,
-    "sl": 73383.19285714286,
-    "opened": "2026-11-10T20:59:11Z"
-   },
    "ETH-USDT-SWAP": {
     "side": 1,
     "entry": 2057.71,
@@ -18,16 +10,34 @@
     "tp": 2081.685,
     "sl": 2043.325,
     "opened": "2026-11-10T20:59:11Z"
+   },
+   "BTC-USDT-SWAP": {
+    "side": -1,
+    "entry": 68960.0,
+    "sz": 7.250580046403712e-05,
+    "tp": 68148.28571428571,
+    "sl": 69447.02857142857,
+    "opened": "2026-11-13T14:59:52Z"
    }
   },
-  "trades": []
+  "trades": [
+   {
+    "ts": "2026-11-13T14:59:52Z",
+    "inst": "BTC-USDT-SWAP",
+    "side": "long",
+    "entry": 73749.3,
+    "exit": 73383.192857,
+    "pnl": -0.0248,
+    "reason": "sl"
+   }
+  ]
  },
  "mode": "paper",
  "demo": null,
- "equity": 1000.0,
+ "equity": 999.98,
  "start_equity": 1000.0,
- "pnl_pct": 0.0,
- "trades": 0,
+ "pnl_pct": -0.002,
+ "trades": 1,
  "open": 2,
  "params": {
   "ema_fast": 9,
@@ -36,8 +46,8 @@
  "params_source": "default",
  "signals": {
   "BTC-USDT-SWAP": {
-   "sig": 0,
-   "price": null,
+   "sig": -1,
+   "price": 68960.0,
    "err": null
   },
   "ETH-USDT-SWAP": {
@@ -52,5 +62,5 @@
   }
  },
  "errors": [],
- "updated": "2026-11-13T06:48:43Z"
+ "updated": "2026-11-13T14:59:52Z"
 }

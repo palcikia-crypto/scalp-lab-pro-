@@ -28,7 +28,4 @@ Using cached tzdata-2026.6-py2.py3-none-any.whl (348 kB)
 Installing collected packages: urllib3, tzdata, numpy, idna, charset_normalizer, certifi, requests, python-dateutil, pandas
 
 Successfully installed certifi-2026.10.23 charset_normalizer-3.5.2 idna-3.20 numpy-2.4.6 pandas-3.1.1 python-dateutil-4.0.0 requests-2.34.2 tzdata-2026.6 urllib3-2.8.0
-
-[notice] A new release of pip is available: 26.2.2 -> 26.3
-[notice] To update, run: pip install --upgrade pip
 imports ok
