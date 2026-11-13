@@ -40,14 +40,14 @@
  "trades": 1,
  "open": 2,
  "params": {
-  "ema_fast": 9,
-  "ema_slow": 21
+  "ema_fast": 5,
+  "ema_slow": 13
  },
- "params_source": "default",
+ "params_source": "evolve",
  "signals": {
   "BTC-USDT-SWAP": {
-   "sig": -1,
-   "price": 68960.0,
+   "sig": 0,
+   "price": null,
    "err": null
   },
   "ETH-USDT-SWAP": {
@@ -62,5 +62,5 @@
   }
  },
  "errors": [],
- "updated": "2026-11-13T14:59:52Z"
+ "updated": "2026-11-13T21:23:32Z"
 }
