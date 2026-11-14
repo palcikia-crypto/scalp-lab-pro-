@@ -1,51 +1,51 @@
 {
- "updated": "2026-11-14T00:18:50Z",
+ "updated": "2026-11-14T06:58:41Z",
  "status": "ready",
  "status_note": "База достаточна. Подтверждённых OOS закономерностей: 0 из 8 гипотез.",
  "settled_this_run": 30,
  "backfilled": 0,
- "base_up_rate": 0.474,
+ "base_up_rate": 0.472,
  "data": {
   "windows": 2922,
-  "settled": 1887,
+  "settled": 1917,
   "snaps": 1796,
   "span_h": 87.0,
   "hist": 1554
  },
  "model": {
-  "n": 6,
+  "n": 11,
   "is": {
    "n": 6,
    "brier": 0.0548,
    "acc": 100.0
   },
   "oos": {
-   "n": 0,
-   "brier": null,
-   "acc": null
+   "n": 5,
+   "brier": 0.2064,
+   "acc": 60.0
   },
   "mkt_cmp": {
    "is": "мод 0.0548 / рынок 0.0411",
-   "oos": null
+   "oos": "мод 0.2064 / рынок 0.1589"
   },
   "mkt_brier": {
    "is": 0.0411,
-   "oos": null
+   "oos": 0.1589
   },
   "blend": {
    "is": 0.0432,
-   "oos": null
+   "oos": 0.1804
   },
   "per_tag": {
    "sht15": {
-    "n": 2,
-    "brier": 0.0504,
+    "n": 4,
+    "brier": 0.0849,
     "acc": 100.0
    },
    "sht5": {
-    "n": 4,
-    "brier": 0.0571,
-    "acc": 100.0
+    "n": 7,
+    "brier": 0.1459,
+    "acc": 71.4
    }
   }
  },
@@ -57,18 +57,35 @@
    "ev": null
   },
   "oos": {
-   "n": 0,
-   "winrate": null,
-   "pnl_r": null,
-   "ev": null
+   "n": 2,
+   "winrate": 0.0,
+   "pnl_r": -2.0,
+   "ev": -1.0
   },
   "total": {
-   "n": 0,
-   "winrate": null,
-   "pnl_r": null,
-   "ev": null
+   "n": 2,
+   "winrate": 0.0,
+   "pnl_r": -2.0,
+   "ev": -1.0
   },
-  "sample": []
+  "sample": [
+   {
+    "t": 1794387332,
+    "tag": "sht15",
+    "part": "oos",
+    "win": 0,
+    "pnl": -1.0,
+    "px": 0.115
+   },
+   {
+    "t": 1794387332,
+    "tag": "sht15",
+    "part": "oos",
+    "win": 0,
+    "pnl": -1.0,
+    "px": 0.305
+   }
+  ]
  },
  "bins": [
   {
@@ -82,11 +99,41 @@
    "flag": false
   },
   {
+   "lo": 0.1,
+   "hi": 0.15,
+   "n": 1,
+   "mkt": 0.115,
+   "real": 0.0,
+   "is_real": null,
+   "oos_real": null,
+   "flag": false
+  },
+  {
+   "lo": 0.3,
+   "hi": 0.35,
+   "n": 1,
+   "mkt": 0.305,
+   "real": 0.0,
+   "is_real": null,
+   "oos_real": null,
+   "flag": false
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.45,
+   "n": 1,
+   "mkt": 0.445,
+   "real": 0.0,
+   "is_real": null,
+   "oos_real": null,
+   "flag": false
+  },
+  {
    "lo": 0.45,
    "hi": 0.5,
-   "n": 3,
+   "n": 4,
    "mkt": 0.482,
-   "real": 0.333,
+   "real": 0.25,
    "is_real": null,
    "oos_real": null,
    "flag": false
@@ -94,9 +141,9 @@
   {
    "lo": 0.5,
    "hi": 0.55,
-   "n": 2,
+   "n": 3,
    "mkt": 0.505,
-   "real": 1.0,
+   "real": 0.667,
    "is_real": null,
    "oos_real": null,
    "flag": false
@@ -106,50 +153,50 @@
   {
    "tag": "sht15",
    "k": 1,
-   "n_up": 239,
-   "p_after_up": 0.674,
-   "n_dn": 257,
-   "p_after_dn": 0.304
+   "n_up": 245,
+   "p_after_up": 0.669,
+   "n_dn": 271,
+   "p_after_dn": 0.299
   },
   {
    "tag": "sht15",
    "k": 2,
-   "n_up": 161,
-   "p_after_up": 0.596,
-   "n_dn": 178,
-   "p_after_dn": 0.371
+   "n_up": 164,
+   "p_after_up": 0.591,
+   "n_dn": 189,
+   "p_after_dn": 0.365
   },
   {
    "tag": "sht15",
    "k": 3,
-   "n_up": 96,
-   "p_after_up": 0.625,
-   "n_dn": 111,
-   "p_after_dn": 0.333
+   "n_up": 97,
+   "p_after_up": 0.619,
+   "n_dn": 119,
+   "p_after_dn": 0.328
   },
   {
    "tag": "sht5",
    "k": 1,
-   "n_up": 656,
+   "n_up": 660,
    "p_after_up": 0.73,
-   "n_dn": 733,
+   "n_dn": 739,
    "p_after_dn": 0.241
   },
   {
    "tag": "sht5",
    "k": 2,
-   "n_up": 479,
+   "n_up": 482,
    "p_after_up": 0.739,
-   "n_dn": 556,
-   "p_after_dn": 0.252
+   "n_dn": 561,
+   "p_after_dn": 0.253
   },
   {
    "tag": "sht5",
    "k": 3,
-   "n_up": 354,
-   "p_after_up": 0.681,
-   "n_dn": 416,
-   "p_after_dn": 0.298
+   "n_up": 356,
+   "p_after_up": 0.68,
+   "n_dn": 419,
+   "p_after_dn": 0.301
   }
  ],
  "hours": [
@@ -191,26 +238,26 @@
   },
   {
    "hour": 6,
-   "n": 93,
-   "up_rate": 0.344,
+   "n": 96,
+   "up_rate": 0.333,
    "flag": true
   },
   {
    "hour": 7,
-   "n": 92,
+   "n": 100,
    "up_rate": 0.5,
    "flag": false
   },
   {
    "hour": 8,
-   "n": 85,
-   "up_rate": 0.494,
+   "n": 96,
+   "up_rate": 0.458,
    "flag": false
   },
   {
    "hour": 9,
-   "n": 52,
-   "up_rate": 0.462,
+   "n": 60,
+   "up_rate": 0.467,
    "flag": false
   },
   {
@@ -300,19 +347,34 @@
  ],
  "streak_edge": {
   "probs": {
-   "after_up": 0.486,
-   "after_down": 0.491
+   "after_up": 0.481,
+   "after_down": 0.485
   },
   "n_est": {
-   "up": 667,
-   "down": 648
+   "up": 674,
+   "down": 662
   },
   "oos": {
-   "n": 0,
-   "winrate": null,
-   "ev": null
+   "n": 2,
+   "winrate": 0.0,
+   "ev": -1.0
   },
-  "trades": []
+  "trades": [
+   {
+    "t": 1794387332,
+    "win": 0,
+    "pnl": -1.0,
+    "px": 0.115,
+    "tag": "sht15"
+   },
+   {
+    "t": 1794387332,
+    "win": 0,
+    "pnl": -1.0,
+    "px": 0.305,
+    "tag": "sht15"
+   }
+  ]
  },
  "hyp": [
   {
@@ -320,8 +382,8 @@
    "note": "Brier < 0.25 на обеих половинах",
    "is_n": 6,
    "is_v": 0.0548,
-   "oos_n": 0,
-   "oos_v": null,
+   "oos_n": 5,
+   "oos_v": 0.2064,
    "ok": false,
    "status": "⏳ копим данные"
   },
@@ -330,8 +392,8 @@
    "note": "Brier модель vs рынок (тот же снимок)",
    "is_n": 6,
    "is_v": "мод 0.0548 / рынок 0.0411",
-   "oos_n": 0,
-   "oos_v": null,
+   "oos_n": 5,
+   "oos_v": "мод 0.2064 / рынок 0.1589",
    "ok": false,
    "status": "⏳ копим данные"
   },
@@ -340,15 +402,15 @@
    "note": "бэктест по снимкам, 1 сделка на окно",
    "is_n": 0,
    "is_v": null,
-   "oos_n": 0,
-   "oos_v": null,
+   "oos_n": 2,
+   "oos_v": "EV -1.0 R",
    "ok": false,
    "status": "⏳ копим данные"
   },
   {
    "name": "Есть бин рынка с системной ошибкой",
    "note": "сдвиг >= 5пп на IS и OOS",
-   "is_n": 3,
+   "is_n": 6,
    "is_v": "флагов: 0",
    "oos_n": 0,
    "oos_v": "бинов с флагом: 0",
@@ -370,8 +432,8 @@
    "note": "Brier смеси < min(модель, рынок) на обеих половинах",
    "is_n": 6,
    "is_v": 0.0432,
-   "oos_n": 0,
-   "oos_v": null,
+   "oos_n": 5,
+   "oos_v": 0.1804,
    "ok": false,
    "status": "⏳ копим данные"
   },
@@ -387,11 +449,11 @@
   },
   {
    "name": "Стрик-эдж: рынок недооценивает моментум",
-   "note": "вероятности из старых 70% данных, сделки только на новых 30%; P(Up|после Up)=0.486, P(Up|после Down)=0.491",
-   "is_n": 1315,
-   "is_v": "P(up|up)=0.486",
-   "oos_n": 0,
-   "oos_v": null,
+   "note": "вероятности из старых 70% данных, сделки только на новых 30%; P(Up|после Up)=0.481, P(Up|после Down)=0.485",
+   "is_n": 1336,
+   "is_v": "P(up|up)=0.481",
+   "oos_n": 2,
+   "oos_v": -1.0,
    "ok": false,
    "status": "⏳ копим данные"
   }
