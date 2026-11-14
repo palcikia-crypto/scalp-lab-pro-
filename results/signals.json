@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T21:21:02Z",
+ "updated": "2026-11-14T01:29:36Z",
  "scanned": 200,
  "signals": [
   {
@@ -9,12 +9,12 @@
    "outcome": "-",
    "price": 0,
    "edge": 0,
-   "note": "объём 24ч 63011 против среднего 17047",
-   "liq": 184861,
-   "v24": 63011,
+   "note": "объём 24ч 63001 против среднего 17047",
+   "liq": 176251,
+   "v24": 63001,
    "z": 0.0,
    "end": "2027-01-01",
-   "days_left": 48.1,
+   "days_left": 47.9,
    "tradeable": false
   },
   {
@@ -24,27 +24,12 @@
    "outcome": "-",
    "price": 0,
    "edge": 0,
-   "note": "объём 24ч 138873 против среднего 40385",
-   "liq": 165784,
-   "v24": 138873,
+   "note": "объём 24ч 142954 против среднего 43223",
+   "liq": 151674,
+   "v24": 142954,
    "z": 0.0,
    "end": "2027-01-01",
-   "days_left": 48.1,
-   "tradeable": false
-  },
-  {
-   "strategy": "vols",
-   "slug": "will-bitcoin-reach-90000-by-december-31-2026-113-862-581-343",
-   "question": "Will Bitcoin reach $90,000 by December 31, 2026?",
-   "outcome": "-",
-   "price": 0,
-   "edge": 0,
-   "note": "объём 24ч 125853 против среднего 39086",
-   "liq": 161944,
-   "v24": 125853,
-   "z": 0.0,
-   "end": "2027-01-01",
-   "days_left": 48.1,
+   "days_left": 47.9,
    "tradeable": false
   },
   {
@@ -54,27 +39,27 @@
    "outcome": "-",
    "price": 0,
    "edge": 0,
-   "note": "объём 24ч 10172 против среднего 2140",
-   "liq": 148316,
-   "v24": 10172,
+   "note": "объём 24ч 10167 против среднего 2138",
+   "liq": 148085,
+   "v24": 10167,
    "z": 0.0,
    "end": "2027-01-01",
-   "days_left": 48.1,
+   "days_left": 47.9,
    "tradeable": false
   },
   {
    "strategy": "vols",
-   "slug": "will-bitcoin-dip-to-60k-by-december-31-2026-from-july-21",
-   "question": "Will Bitcoin dip to $60,000 by December 31, 2026?",
+   "slug": "will-bitcoin-dip-to-5000-by-december-31-2026-jy3n-991-141-345-117-196-482-674-487-176-555",
+   "question": "Will Bitcoin dip to $5,000 by December 31, 2026?",
    "outcome": "-",
    "price": 0,
    "edge": 0,
-   "note": "объём 24ч 159064 против среднего 46486",
-   "liq": 127395,
-   "v24": 159064,
+   "note": "объём 24ч 8756 против среднего 1299",
+   "liq": 130669,
+   "v24": 8756,
    "z": 0.0,
    "end": "2027-01-01",
-   "days_left": 48.1,
+   "days_left": 47.9,
    "tradeable": false
   }
  ]
