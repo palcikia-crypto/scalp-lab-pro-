@@ -1,7 +1,22 @@
 {
- "updated": "2026-11-14T07:51:11Z",
+ "updated": "2026-11-14T14:33:45Z",
  "scanned": 200,
  "signals": [
+  {
+   "strategy": "vols",
+   "slug": "will-bitcoin-dip-to-66k-on-november-14-2026",
+   "question": "Will Bitcoin dip to $66,000 on November 14?",
+   "outcome": "-",
+   "price": 0,
+   "edge": 0,
+   "note": "объём 24ч 28027 против среднего 4004",
+   "liq": 160823,
+   "v24": 28027,
+   "z": 0.0,
+   "end": "2026-11-15",
+   "days_left": 0.4,
+   "tradeable": false
+  },
   {
    "strategy": "vols",
    "slug": "will-bitcoin-reach-140000-by-december-31-2026-131-829-299",
@@ -9,12 +24,27 @@
    "outcome": "-",
    "price": 0,
    "edge": 0,
-   "note": "объём 24ч 10957 против среднего 2124",
-   "liq": 138874,
-   "v24": 10957,
+   "note": "объём 24ч 11952 против среднего 2188",
+   "liq": 140549,
+   "v24": 11952,
    "z": 0.0,
    "end": "2027-01-01",
-   "days_left": 47.7,
+   "days_left": 47.4,
+   "tradeable": false
+  },
+  {
+   "strategy": "vols",
+   "slug": "will-bitcoin-dip-to-5000-by-december-31-2026-jy3n-991-141-345-117-196-482-674-487-176-555",
+   "question": "Will Bitcoin dip to $5,000 by December 31, 2026?",
+   "outcome": "-",
+   "price": 0,
+   "edge": 0,
+   "note": "объём 24ч 9134 против среднего 1365",
+   "liq": 130423,
+   "v24": 9134,
+   "z": 0.0,
+   "end": "2027-01-01",
+   "days_left": 47.4,
    "tradeable": false
   }
  ]
