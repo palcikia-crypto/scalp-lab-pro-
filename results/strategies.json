@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T22:56:25Z",
+ "updated": "2026-11-15T02:35:09Z",
  "rule_v2": {
   "status": "⏳ копим данные",
   "ev_oos": -1.0,
@@ -13,8 +13,8 @@
  "streak_v1": {
   "status": "⏳ копим данные",
   "probs": {
-   "after_up": 0.486,
-   "after_down": 0.489
+   "after_up": 0.483,
+   "after_down": 0.493
   },
   "oos": {
    "n": 2,
