@@ -1,1 +1,1 @@
-okx trader: mode=paper equity=999.94 open=2 trades=2 errors=0
+okx trader: mode=paper equity=1000.0 open=2 trades=3 errors=0
