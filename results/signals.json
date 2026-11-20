@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T17:52:43Z",
+ "updated": "2026-11-20T23:25:05Z",
  "scanned": 200,
  "signals": [
   {
@@ -9,12 +9,12 @@
    "outcome": "-",
    "price": 0,
    "edge": 0,
-   "note": "объём 24ч 390959 против среднего 61820",
-   "liq": 311754,
-   "v24": 390959,
+   "note": "объём 24ч 483887 против среднего 75112",
+   "liq": 252538,
+   "v24": 483887,
    "z": 0.0,
    "end": "2027-01-01",
-   "days_left": 41.3,
+   "days_left": 41.0,
    "tradeable": false
   },
   {
@@ -24,12 +24,12 @@
    "outcome": "-",
    "price": 0,
    "edge": 0,
-   "note": "объём 24ч 58408 против среднего 13187",
-   "liq": 225222,
-   "v24": 58408,
+   "note": "объём 24ч 132523 против среднего 24034",
+   "liq": 150888,
+   "v24": 132523,
    "z": 0.0,
    "end": "2027-01-01",
-   "days_left": 41.3,
+   "days_left": 41.0,
    "tradeable": false
   },
   {
@@ -40,11 +40,41 @@
    "price": 0,
    "edge": 0,
    "note": "объём 24ч 23116 против среднего 4139",
-   "liq": 122376,
+   "liq": 128360,
    "v24": 23116,
    "z": 0.0,
    "end": "2026-12-01",
-   "days_left": 10.3,
+   "days_left": 10.0,
+   "tradeable": false
+  },
+  {
+   "strategy": "vols",
+   "slug": "bitcoin-above-74k-on-november-21-2026",
+   "question": "Will the price of Bitcoin be above $74,000 on November 21?",
+   "outcome": "-",
+   "price": 0,
+   "edge": 0,
+   "note": "объём 24ч 24480 против среднего 3654",
+   "liq": 127582,
+   "v24": 24480,
+   "z": 0.0,
+   "end": "2026-11-21",
+   "days_left": 0.0,
+   "tradeable": false
+  },
+  {
+   "strategy": "vols",
+   "slug": "will-bitcoin-reach-190000-by-december-31-2026-936-485-627",
+   "question": "Will Bitcoin reach $190,000 by December 31, 2026?",
+   "outcome": "-",
+   "price": 0,
+   "edge": 0,
+   "note": "объём 24ч 9021 против среднего 1470",
+   "liq": 125476,
+   "v24": 9021,
+   "z": 0.0,
+   "end": "2027-01-01",
+   "days_left": 41.0,
    "tradeable": false
   },
   {
@@ -55,26 +85,11 @@
    "price": 0,
    "edge": 0,
    "note": "объём 24ч 3592 против среднего 1094",
-   "liq": 120634,
+   "liq": 123269,
    "v24": 3592,
    "z": 0.0,
    "end": "2027-01-01",
-   "days_left": 41.3,
-   "tradeable": false
-  },
-  {
-   "strategy": "vols",
-   "slug": "will-bitcoin-dip-to-25000-by-december-31-2026-948-243-253-666-115-787-981-282-573-719-186-417-762-754-486-851-278-145-417-178-244",
-   "question": "Will Bitcoin dip to $25,000 by December 31, 2026?",
-   "outcome": "-",
-   "price": 0,
-   "edge": 0,
-   "note": "объём 24ч 30098 против среднего 6602",
-   "liq": 116413,
-   "v24": 30098,
-   "z": 0.0,
-   "end": "2027-01-01",
-   "days_left": 41.3,
+   "days_left": 41.0,
    "tradeable": false
   }
  ]
