@@ -73,8 +73,8 @@
  "params_source": "evolve",
  "signals": {
   "BTC-USDT-SWAP": {
-   "sig": -1,
-   "price": 61737.5,
+   "sig": 0,
+   "price": null,
    "err": null
   },
   "ETH-USDT-SWAP": {
@@ -83,11 +83,11 @@
    "err": null
   },
   "SOL-USDT-SWAP": {
-   "sig": -1,
-   "price": 72.48,
+   "sig": 0,
+   "price": null,
    "err": null
   }
  },
  "errors": [],
- "updated": "2026-11-20T04:20:55Z"
+ "updated": "2026-11-20T13:20:47Z"
 }
