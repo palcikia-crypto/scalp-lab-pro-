@@ -1,6 +1,12 @@
 {
  "history": [
   {
+   "ts": "2026-11-21T23:08:22Z",
+   "best": null,
+   "golden_n": 3,
+   "err": null
+  },
+  {
    "ts": "2026-11-21T17:25:44Z",
    "best": null,
    "golden_n": 3,
@@ -196,7 +202,7 @@
    "err": null
   }
  ],
- "updated": "2026-11-21T17:25:44Z",
+ "updated": "2026-11-21T23:08:22Z",
  "best_okx": null,
  "candidates": [],
  "golden": [
