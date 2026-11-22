@@ -1,15 +1,15 @@
 {
- "updated": "2026-11-21T20:03:34Z",
+ "updated": "2026-11-22T00:17:35Z",
  "status": "ready",
  "status_note": "База достаточна. Подтверждённых OOS закономерностей: 0 из 8 гипотез.",
  "settled_this_run": 30,
  "backfilled": 0,
- "base_up_rate": 0.478,
+ "base_up_rate": 0.477,
  "data": {
   "windows": 2922,
-  "settled": 2697,
+  "settled": 2727,
   "snaps": 1796,
-  "span_h": 92.0,
+  "span_h": 92.7,
   "hist": 1554
  },
  "model": {
@@ -197,18 +197,18 @@
   {
    "tag": "sht15",
    "k": 1,
-   "n_up": 347,
-   "p_after_up": 0.651,
-   "n_dn": 388,
-   "p_after_dn": 0.312
+   "n_up": 350,
+   "p_after_up": 0.649,
+   "n_dn": 391,
+   "p_after_dn": 0.315
   },
   {
    "tag": "sht15",
    "k": 2,
-   "n_up": 226,
-   "p_after_up": 0.562,
-   "n_dn": 266,
-   "p_after_dn": 0.368
+   "n_up": 227,
+   "p_after_up": 0.559,
+   "n_dn": 267,
+   "p_after_dn": 0.371
   },
   {
    "tag": "sht15",
@@ -221,26 +221,26 @@
   {
    "tag": "sht5",
    "k": 1,
-   "n_up": 942,
+   "n_up": 952,
    "p_after_up": 0.738,
-   "n_dn": 1018,
-   "p_after_dn": 0.244
+   "n_dn": 1032,
+   "p_after_dn": 0.241
   },
   {
    "tag": "sht5",
    "k": 2,
-   "n_up": 694,
+   "n_up": 703,
    "p_after_up": 0.738,
-   "n_dn": 770,
-   "p_after_dn": 0.26
+   "n_dn": 782,
+   "p_after_dn": 0.257
   },
   {
    "tag": "sht5",
    "k": 3,
-   "n_up": 512,
+   "n_up": 519,
    "p_after_up": 0.684,
-   "n_dn": 570,
-   "p_after_dn": 0.311
+   "n_dn": 580,
+   "p_after_dn": 0.307
   }
  ],
  "hours": [
@@ -318,14 +318,14 @@
   },
   {
    "hour": 12,
-   "n": 120,
-   "up_rate": 0.425,
+   "n": 140,
+   "up_rate": 0.45,
    "flag": false
   },
   {
    "hour": 13,
-   "n": 96,
-   "up_rate": 0.49,
+   "n": 106,
+   "up_rate": 0.443,
    "flag": false
   },
   {
@@ -391,12 +391,12 @@
  ],
  "streak_edge": {
   "probs": {
-   "after_up": 0.485,
-   "after_down": 0.481
+   "after_up": 0.484,
+   "after_down": 0.483
   },
   "n_est": {
-   "up": 938,
-   "down": 944
+   "up": 950,
+   "down": 953
   },
   "oos": {
    "n": 0,
@@ -478,9 +478,9 @@
   },
   {
    "name": "Стрик-эдж: рынок недооценивает моментум",
-   "note": "вероятности из старых 70% данных, сделки только на новых 30%; P(Up|после Up)=0.485, P(Up|после Down)=0.481",
-   "is_n": 1882,
-   "is_v": "P(up|up)=0.485",
+   "note": "вероятности из старых 70% данных, сделки только на новых 30%; P(Up|после Up)=0.484, P(Up|после Down)=0.483",
+   "is_n": 1903,
+   "is_v": "P(up|up)=0.484",
    "oos_n": 0,
    "oos_v": null,
    "ok": false,
