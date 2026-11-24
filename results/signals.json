@@ -1,5 +1,36 @@
 {
- "updated": "2026-11-24T11:41:22Z",
+ "updated": "2026-11-24T21:30:16Z",
  "scanned": 200,
- "signals": []
+ "signals": [
+  {
+   "strategy": "fav",
+   "slug": "will-bitcoin-dip-to-50k-in-november-2026",
+   "question": "Will Bitcoin dip to $50,000 in November?",
+   "outcome": "No",
+   "price": 0.931,
+   "edge": 0.0345,
+   "note": "фаворит (No) 93% до конца 6 дн",
+   "liq": 197671,
+   "v24": 64967,
+   "z": 0.0,
+   "end": "2026-12-01",
+   "days_left": 6.1,
+   "tradeable": true
+  },
+  {
+   "strategy": "vols",
+   "slug": "will-bitcoin-reach-200000-by-december-31-2026-752-232-389",
+   "question": "Will Bitcoin reach $200,000 by December 31, 2026?",
+   "outcome": "-",
+   "price": 0,
+   "edge": 0,
+   "note": "объём 24ч 17927 против среднего 2840",
+   "liq": 165679,
+   "v24": 17927,
+   "z": 0.0,
+   "end": "2027-01-01",
+   "days_left": 37.1,
+   "tradeable": false
+  }
+ ]
 }
