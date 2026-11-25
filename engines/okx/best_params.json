@@ -2,9 +2,9 @@
  "ema_fast": 5,
  "ema_slow": 13,
  "sl_atr": 1.0,
- "tp_atr": 2.0,
- "is_ret": 0.38,
- "oos_ret": 1.93,
- "trades": 28,
- "updated": "2026-11-24T05:57:34Z"
+ "tp_atr": 2.5,
+ "is_ret": 2.99,
+ "oos_ret": 1.75,
+ "trades": 32,
+ "updated": "2026-11-25T22:27:52Z"
 }
