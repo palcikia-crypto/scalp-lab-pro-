@@ -1,1 +1,1 @@
-evolve: best={"ema_fast": 5, "ema_slow": 13, "sl_atr": 1.0, "tp_atr": 2.5, "is_ret": 2.99, "oos_ret": 1.75, "trades": 32, "updated": "2026-11-25T22:27:52Z"} candidates=2 golden=3 err=None
+evolve: best={"ema_fast": 5, "ema_slow": 13, "sl_atr": 1.0, "tp_atr": 3.0, "is_ret": 5.02, "oos_ret": 8.63, "trades": 27, "updated": "2026-11-26T04:58:14Z"} candidates=5 golden=3 err=None
